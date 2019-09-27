@@ -7,8 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 public class QuantityTest {
     @Test
     void givenZeroFeetAndZeroFeet_whenCompare_thenTheyShouldBeEqual() {
-        Quantity zeroFeet = new Quantity(0);
+        Quantity zeroFeetOne = new Quantity(0);
+        Quantity zeroFeetTwo = new Quantity(0);
 
-        assertTrue(zeroFeet.equals(zeroFeet));
+        assertTrue(zeroFeetOne.equals(zeroFeetTwo));
     }
+
+    @Test
+    void givenZeroFeetAndAnotherObject_whenCompare_thenTheyShouldNotBeEqual() {
+        Quantity zeroFeetOne = new Quantity(0);
+
+        assertFalse(zeroFeetOne.equals(new Object()));
+    }
+
 }

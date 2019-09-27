@@ -7,8 +7,8 @@ public class Quantity {
         this.value = value;
     }
 
+    @Override
     public boolean equals(Object object) {
-        Quantity that = (Quantity) object;
-        return this.value == that.value;
+        return object instanceof Quantity;
     }
 }
