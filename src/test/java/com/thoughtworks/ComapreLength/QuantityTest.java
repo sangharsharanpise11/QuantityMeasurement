@@ -27,4 +27,12 @@ public class QuantityTest {
 
         assertFalse(zeroFeet.equals(oneFeet));
     }
+
+    @Test
+    void givenZeroFeetAndNullFeet_whenCompare_thenTheyShouldNotBeEqual() {
+        Quantity zeroFeet = new Quantity(0);
+        Quantity nullFeet =null ;
+
+        assertFalse(zeroFeet.equals(nullFeet));
+    }
 }
