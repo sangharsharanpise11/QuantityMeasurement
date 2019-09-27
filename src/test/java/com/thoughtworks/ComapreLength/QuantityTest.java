@@ -6,10 +6,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class QuantityTest {
     @Test
-    void givenZeroFeetAndZeroInches_whenCompare_thenTheyShouldBeEqual() {
+    void givenZeroFeetAndZeroFeet_whenCompare_thenTheyShouldBeEqual() {
+        Quantity zeroFeet = new Quantity(0);
 
-        Quantity Zero = new Quantity(0);
-
-        assertTrue(Zero.compare(Zero));
+        assertTrue(zeroFeet.equals(zeroFeet));
     }
 }
