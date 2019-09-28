@@ -10,7 +10,8 @@ public class Inch {
     @Override
     public boolean equals(Object object) {
         if (object instanceof Inch) {
-            return true;
+            Inch that = (Inch) object;
+            return this.value == that.value;
         }
         return false;
     }
