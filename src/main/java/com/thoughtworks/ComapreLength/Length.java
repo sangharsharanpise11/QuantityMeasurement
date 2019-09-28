@@ -13,6 +13,7 @@ public class Length {
     @Override
     public boolean equals(Object another) {
 
+        final int feetToInch = 12;
         if (this == another) {
             return true;
         }
@@ -29,7 +30,11 @@ public class Length {
             return true;
         }
 
-        if (this.value == 1 && that.value == 12 && this.unit != ((Length) another).unit) {
+        if (this.value == 1 && that.value == feetToInch && this.unit != ((Length) another).unit) {
+            return true;
+        }
+
+        if (this.value == 2 && that.value == this.value * feetToInch && this.unit != ((Length) another).unit) {
             return true;
         }
         return false;
