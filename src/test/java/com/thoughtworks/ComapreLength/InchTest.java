@@ -27,4 +27,11 @@ public class InchTest {
 
         assertFalse(zeroInch.equals(oneInch));
     }
+
+    @Test
+    void givenZeroInchAndNull_whenCompare_thenTheyShouldNotBeEqual() {
+        Inch zeroInch = new Inch(0);
+
+        assertFalse(zeroInch.equals(null));
+    }
 }
