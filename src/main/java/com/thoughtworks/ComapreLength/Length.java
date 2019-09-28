@@ -2,13 +2,12 @@ package com.thoughtworks.ComapreLength;
 
 public class Length {
     private final int value;
+    private final Unit unit;
 
-    enum Unit {
-        Feet, Inch
-    }
 
     public Length(int value, Unit unit) {
         this.value = value;
+        this.unit=unit;
     }
 
     @Override
