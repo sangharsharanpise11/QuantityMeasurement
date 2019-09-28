@@ -1,6 +1,7 @@
 package com.thoughtworks.ComapreLength;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LengthTest {
@@ -53,6 +54,7 @@ public class LengthTest {
     void givenZeroInchAndOneInch_whenCompare_thenTheyShouldNotBeEqual() {
         Length zeroInch = new Length(0, Unit.Inch);
         Length oneInch = new Length(1, Unit.Inch);
+
         assertFalse(zeroInch.equals(oneInch));
     }
 
@@ -67,6 +69,7 @@ public class LengthTest {
     void givenOneInchAndOneFeet_whenCompare_thenTheyShouldNotBeEqual() {
         Length oneInch = new Length(1, Unit.Inch);
         Length oneFeet = new Length(1, Unit.Feet);
+
         assertFalse(oneFeet.equals(oneInch));
     }
 
@@ -74,6 +77,7 @@ public class LengthTest {
     void givenZeroInchAndZeroFeet_whenCompare_thenTheyShouldBeEqual() {
         Length zeroInch = new Length(0, Unit.Inch);
         Length zeroFeet = new Length(0, Unit.Feet);
+
         assertTrue(zeroFeet.equals(zeroInch));
     }
 
@@ -81,6 +85,7 @@ public class LengthTest {
     void givenOneFeetAndTwelveInch_whenCompare_thenTheyShouldBeEqual() {
         Length oneFeet = new Length(1, Unit.Feet);
         Length twelveInch = new Length(12, Unit.Inch);
+
         assertTrue(oneFeet.equals(twelveInch));
     }
 
@@ -88,6 +93,7 @@ public class LengthTest {
     void givenTwoFeetAndTwentyFourInch_whenCompare_thenTheyShouldBeEqual() {
         Length twoFeet = new Length(2, Unit.Feet);
         Length twentyFourInch = new Length(24, Unit.Inch);
+
         assertTrue(twoFeet.equals(twentyFourInch));
     }
 
@@ -95,6 +101,7 @@ public class LengthTest {
     void givenTwelveInchesAndOneFeet_whenCompare_thenTheyShouldBeEqual() {
         Length twelveInch = new Length(12, Unit.Inch);
         Length oneFeet = new Length(1, Unit.Feet);
+
         assertTrue(twelveInch.equals(oneFeet));
     }
 
@@ -102,6 +109,7 @@ public class LengthTest {
     void givenTwentyFourInchesAndTwoFeet_whenCompare_thenTheyShouldBeEqual() {
         Length twentyFourInche = new Length(24, Unit.Inch);
         Length twoFeet = new Length(2, Unit.Feet);
+
         assertTrue(twentyFourInche.equals(twoFeet));
     }
 }
