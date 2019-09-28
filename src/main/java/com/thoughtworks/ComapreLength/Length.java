@@ -14,7 +14,7 @@ public class Length {
     public boolean equals(Object object) {
         if (object instanceof Length) {
             Length that = (Length) object;
-            return this.value == that.value;
+            return this.value == that.value && this.unit==that.unit;
         }
         if (this == object) {
             return true;

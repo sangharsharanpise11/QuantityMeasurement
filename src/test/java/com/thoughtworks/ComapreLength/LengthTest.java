@@ -65,4 +65,10 @@ public class LengthTest {
         assertFalse(zeroInch.equals(null));
     }
 
+    @Test
+    void givenZeroInchAndZeroFeet_whenCompare_thenTheyShouldNotBeEqual() {
+        Length zeroInch = new Length(0, Unit.Inch);
+        Length zeroFeet = new Length(0, Unit.Feet);
+        assertFalse(zeroFeet.equals(zeroInch));
+    }
 }
