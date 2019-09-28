@@ -4,34 +4,35 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FeetTest {
+public class LengthTest {
     @Test
     void givenZeroFeetAndZeroFeet_whenCompare_thenTheyShouldBeEqual() {
-        Feet zeroFeetOne = new Feet(0);
-        Feet zeroFeetTwo = new Feet(0);
+        Length zeroFeetOne = new Length(0, Length.Unit.Feet);
+        Length zeroFeetTwo = new Length(0, Length.Unit.Feet);
 
         assertTrue(zeroFeetOne.equals(zeroFeetTwo));
     }
 
     @Test
     void givenZeroFeetAndAnotherObject_whenCompare_thenTheyShouldNotBeEqual() {
-        Feet zeroFeetOne = new Feet(0);
+        Length zeroFeetOne = new Length(0, Length.Unit.Feet);
 
         assertFalse(zeroFeetOne.equals(new Object()));
     }
 
     @Test
     void givenZeroFeetAndOneFeet_whenCompare_thenTheyShouldNotBeEqual() {
-        Feet zeroFeet = new Feet(0);
-        Feet oneFeet = new Feet(1);
+        Length zeroFeet = new Length(0, Length.Unit.Feet);
+        Length oneFeet = new Length(1, Length.Unit.Feet);
 
         assertFalse(zeroFeet.equals(oneFeet));
     }
 
     @Test
     void givenZeroFeetAndNullFeet_whenCompare_thenTheyShouldNotBeEqual() {
-        Feet zeroFeet = new Feet(0);
+        Length zeroFeet = new Length(0, Length.Unit.Feet);
 
         assertFalse(zeroFeet.equals(null));
     }
+
 }
