@@ -14,7 +14,6 @@ public class Length {
     public boolean equals(Object another) {
 
         final int feetToInch = 12;
-        final int inchToFeet = 1;
 
         if (this == another) {
             return true;
@@ -28,19 +27,11 @@ public class Length {
             return true;
         }
 
-        if (this.value == 0 && this.unit != ((Length) another).unit) {
+        if (this.value >= 0 && that.value == this.value * feetToInch && this.unit != ((Length) another).unit) {
             return true;
         }
 
-        if (this.value == 1 && that.value == feetToInch && this.unit != ((Length) another).unit) {
-            return true;
-        }
-
-        if (this.value == 2 && that.value == this.value * feetToInch && this.unit != ((Length) another).unit) {
-            return true;
-        }
-
-        if (this.value == 12 && that.value == this.value * 1 / feetToInch && this.unit != ((Length) another).unit) {
+        if (this.value >= 12 && that.value == this.value * 1 / feetToInch) {
             return true;
         }
         return false;

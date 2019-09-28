@@ -98,4 +98,11 @@ public class LengthTest {
         Length oneFeet = new Length(1, Unit.Feet);
         assertTrue(twelveInch.equals(oneFeet));
     }
+
+    @Test
+    void givenTwentyFourInchesAndTwoFeet_whenCompare_thenTheyShouldBeEqual() {
+        Length twentyFourInche = new Length(24, Unit.Inch);
+        Length twoFeet = new Length(2, Unit.Feet);
+        assertTrue(twentyFourInche.equals(twoFeet));
+    }
 }
