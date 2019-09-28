@@ -4,35 +4,34 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class QuantityTest {
+public class FootTest {
     @Test
     void givenZeroFeetAndZeroFeet_whenCompare_thenTheyShouldBeEqual() {
-        Quantity zeroFeetOne = new Quantity(0);
-        Quantity zeroFeetTwo = new Quantity(0);
+        Foot zeroFeetOne = new Foot(0);
+        Foot zeroFeetTwo = new Foot(0);
 
         assertTrue(zeroFeetOne.equals(zeroFeetTwo));
     }
 
     @Test
     void givenZeroFeetAndAnotherObject_whenCompare_thenTheyShouldNotBeEqual() {
-        Quantity zeroFeetOne = new Quantity(0);
+        Foot zeroFeetOne = new Foot(0);
 
         assertFalse(zeroFeetOne.equals(new Object()));
     }
 
     @Test
     void givenZeroFeetAndOneFeet_whenCompare_thenTheyShouldNotBeEqual() {
-        Quantity zeroFeet = new Quantity(0);
-        Quantity oneFeet = new Quantity(1);
+        Foot zeroFeet = new Foot(0);
+        Foot oneFeet = new Foot(1);
 
         assertFalse(zeroFeet.equals(oneFeet));
     }
 
     @Test
     void givenZeroFeetAndNullFeet_whenCompare_thenTheyShouldNotBeEqual() {
-        Quantity zeroFeet = new Quantity(0);
-        Quantity nullFeet =null ;
+        Foot zeroFeet = new Foot(0);
 
-        assertFalse(zeroFeet.equals(nullFeet));
+        assertFalse(zeroFeet.equals(null));
     }
 }

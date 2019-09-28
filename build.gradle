@@ -1,13 +1,25 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'com.thoughtworks'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = JavaVersion.VERSION_11
+
 repositories {
     mavenCentral()
+}
+publishing{
+    publications{
+        maven(MavenPublication){
+            groupId 'com.thoughtworks'
+            artifactId 'compareLength'
+            version '1.0-SNAPSHOT'
+            from components.java
+        }
+    }
 }
 test {
     useJUnitPlatform()
