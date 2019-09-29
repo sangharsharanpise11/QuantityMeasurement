@@ -120,4 +120,12 @@ public class LengthTest {
 
         assertTrue(oneYard.equals(anotherOneYard));
     }
+
+    @Test
+    void givenOneYardAndZeroYard_whenCompare_thenTheyShouldNotBeEqual() {
+        Length oneYard = new Length(1, Unit.Yard);
+        Length zeroYard = new Length(0, Unit.Yard);
+
+        assertFalse(oneYard.equals(zeroYard));
+    }
 }
