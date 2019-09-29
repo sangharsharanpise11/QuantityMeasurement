@@ -176,4 +176,12 @@ public class LengthTest {
 
         assertEquals(new Quantity(2, Unit.Gallon), oneGallon.add(anotherOneGallon));
     }
+
+    @Test
+    void giventOneGallonAndThreePointSeventyEightLiters_whenEquals_thenTheyShouldBeEqual() {
+        Quantity oneGallon = new Quantity(1, Unit.Gallon);
+        Quantity threePointSeventyEightLiters = new Quantity(3.78, Unit.Liters);
+
+        assertTrue(oneGallon.equals(threePointSeventyEightLiters));
+    }
 }

@@ -4,7 +4,8 @@ public enum Unit {
     Feet(12),
     Inch(1),
     Yard(36),
-    Gallon(1);
+    Gallon(3.78),
+    Liters(1);
 
     private double conversionFactor;
     private double conversionToCM;
