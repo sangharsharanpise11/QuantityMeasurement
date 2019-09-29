@@ -2,7 +2,8 @@ package com.thoughtworks.ComapreLength;
 
 public enum Unit {
     Feet(12, 2.54),
-    Inch(1, 2.54);
+    Inch(1, 2.54),
+    Yard(1,1);
 
     private double conversionFactor;
     private double conversionToCM;
