@@ -1,19 +1,19 @@
 package com.thoughtworks.ComapreLength;
 
 public enum Unit {
-    Feet(12, 2.54),
-    Inch(1, 2.54),
-    Yard(1,1);
+    Feet(12),
+    Inch(1),
+    Yard(36);
 
     private double conversionFactor;
     private double conversionToCM;
 
-    Unit(final double conversionFactor, final double conversionToCM) {
+    Unit(final double conversionFactor) {
         this.conversionFactor = conversionFactor;
-        this.conversionToCM = conversionToCM;
+
     }
 
     double convertToBase(double value) {
-        return conversionFactor * value * conversionToCM;
+        return conversionFactor * value;
     }
 }

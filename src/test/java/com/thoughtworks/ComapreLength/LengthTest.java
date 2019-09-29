@@ -128,4 +128,20 @@ public class LengthTest {
 
         assertFalse(oneYard.equals(zeroYard));
     }
+
+    @Test
+    void givenOneYardAndOneFeet_whenCompare_thenTheyShouldNotBeEqual() {
+        Length oneYard = new Length(1, Unit.Yard);
+        Length oneFeet = new Length(1, Unit.Feet);
+
+        assertFalse(oneYard.equals(oneFeet));
+    }
+
+    @Test
+    void givenTwoInchAndTwoInch_whenEquals_thenTheyShouldBeFourInch() {
+        Length twoInch = new Length(2, Unit.Inch);
+        Length anotherTwoInch = new Length(2, Unit.Inch);
+
+        assertEquals(new Length(4,Unit.Inch),twoInch.add(anotherTwoInch));
+    }
 }
