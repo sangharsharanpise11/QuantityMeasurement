@@ -23,7 +23,6 @@ public class Length {
     }
 
     public Length add(Length other) {
-        return (this.value == 2 && other.value == 2) ? new Length(4, Unit.Inch) : new Length(0, Unit.Inch);
-
+        return new Length(this.unit.convertToBase(this.value)+other.unit.convertToBase(other.value),Unit.Inch);
     }
 }

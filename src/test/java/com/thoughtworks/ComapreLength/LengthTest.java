@@ -144,4 +144,11 @@ public class LengthTest {
 
         assertEquals(new Length(4,Unit.Inch),twoInch.add(anotherTwoInch));
     }
+    @Test
+    void givenOnefeetAndOneInch_whenAdded_thenTheyShouldBeThirteenInch() {
+        Length oneFeet = new Length(1, Unit.Feet);
+        Length oneInch = new Length(1, Unit.Inch);
+
+        assertEquals(new Length(13,Unit.Inch),oneFeet.add(oneInch));
+    }
 }
