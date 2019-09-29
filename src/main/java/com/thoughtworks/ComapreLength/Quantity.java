@@ -1,11 +1,11 @@
 package com.thoughtworks.ComapreLength;
 
-public class Length {
+public class Quantity {
     private final double value;
     private final Unit unit;
 
 
-    public Length(double value, Unit unit) {
+    public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -15,14 +15,14 @@ public class Length {
         if (this == another) {
             return true;
         }
-        if (another instanceof Length) {
-            Length that = (Length) another;
+        if (another instanceof Quantity) {
+            Quantity that = (Quantity) another;
             return this.unit.convertToBase(value) == that.unit.convertToBase(that.value);
         }
         return false;
     }
 
-    public Length add(Length other) {
-        return new Length(this.unit.convertToBase(this.value)+other.unit.convertToBase(other.value),Unit.Inch);
+    public Quantity add(Quantity other) {
+        return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.Inch);
     }
 }
