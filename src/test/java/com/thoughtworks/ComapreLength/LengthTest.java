@@ -114,7 +114,7 @@ public class LengthTest {
     }
 
     @Test
-    void givenThreeFeetAndOneYard_whenCompare_thenTheyShouldBeEqual() {
+    void givenOneYardAndAnotherOneYard_whenCompare_thenTheyShouldBeEqual() {
         Length oneYard = new Length(1, Unit.Yard);
         Length anotherOneYard = new Length(1, Unit.Yard);
 
