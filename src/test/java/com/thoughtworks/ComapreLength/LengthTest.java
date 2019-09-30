@@ -190,6 +190,15 @@ public class LengthTest {
         Quantity oneFeet = new Quantity(1, Unit.Feet);
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
 
-        assertFalse(oneFeet.equals(oneGallon));
+        assertNotEquals(oneFeet, oneGallon);
     }
+
+    @Test
+    void givenOneInchAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
+        Quantity oneInch = new Quantity(1, Unit.Inch);
+        Quantity oneLiter = new Quantity(1, Unit.Liter);
+
+        assertNotEquals(oneInch, oneLiter);
+    }
+
 }
