@@ -216,4 +216,12 @@ public class LengthTest {
 
         assertNotEquals(oneInch, oneGallon);
     }
+
+    @Test
+    void givenOneYardAndOneGallon_whenCheckingEquality_thenTheyShouldBeNotEqual() {
+        Quantity oneYard = new Quantity(1, Unit.Yard);
+        Quantity oneGallon = new Quantity(1, Unit.Gallon);
+
+        assertNotEquals(oneYard, oneGallon);
+    }
 }
