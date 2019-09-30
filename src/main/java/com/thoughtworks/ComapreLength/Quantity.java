@@ -8,8 +8,8 @@ public class Quantity {
     public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
-    }
 
+    }
 
     @Override
     public boolean equals(Object another) {
@@ -24,9 +24,6 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
-        if (this.unit == Unit.Feet && other.unit == Unit.Gallon || other.unit == Unit.Liters || this.unit == Unit.Inch && other.unit == Unit.Gallon) {
-            throw new IllegalArgumentException();
-        }
         return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.Inch);
     }
 }

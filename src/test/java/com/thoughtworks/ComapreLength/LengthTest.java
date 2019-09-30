@@ -1,6 +1,5 @@
 package com.thoughtworks.ComapreLength;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -171,7 +170,7 @@ public class LengthTest {
     }
 
     @Test
-    void giventOneGallonAndAnotherOneGallon_whenAdded_thenTheyShouldBeTwoGallon() {
+    void givenOneGallonAndAnotherOneGallon_whenAdded_thenTheyShouldBeTwoGallon() {
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
         Quantity anotherOneGallon = new Quantity(1, Unit.Gallon);
 
@@ -179,42 +178,10 @@ public class LengthTest {
     }
 
     @Test
-    void giventOneGallonAndThreePointSeventyEightLiters_whenEquals_thenTheyShouldBeEqual() {
+    void givenOneGallonAndThreePointSeventyEightLiters_whenEquals_thenTheyShouldBeEqual() {
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
-        Quantity threePointSevenEightLiters = new Quantity(3.78, Unit.Liters);
+        Quantity threePointSevenEightLiters = new Quantity(3.78, Unit.Liter);
 
         assertEquals(oneGallon, threePointSevenEightLiters);
-    }
-
-    @Test
-    void givenOneFeetAndOneGallon_whenAdd_thenTheyShouldThrowAnException() {
-        Quantity oneFeet = new Quantity(1, Unit.Feet);
-        Quantity oneGallon = new Quantity(1, Unit.Gallon);
-
-        assertThrows(IllegalArgumentException.class, () -> oneFeet.add(oneGallon));
-    }
-
-    @Test
-    void givenOneFeetAndOneLiter_whenAdd_thenTheyShouldThrowAnException() {
-        Quantity oneFeet = new Quantity(1, Unit.Feet);
-        Quantity oneLiter = new Quantity(1, Unit.Liters);
-
-        assertThrows(IllegalArgumentException.class, () -> oneFeet.add(oneLiter));
-    }
-
-    @Test
-    void givenOneInchAndOneGallon_whenAdd_thenTheyShouldThrowAnException() {
-        Quantity oneInch = new Quantity(1, Unit.Inch);
-        Quantity oneGallon = new Quantity(1, Unit.Gallon);
-
-        assertThrows(IllegalArgumentException.class, () -> oneInch.add(oneGallon));
-    }
-
-    @Test
-    void givenOneInchAndOneLiter_whenAdd_thenTheyShouldThrowAnException() {
-        Quantity oneInch = new Quantity(1, Unit.Inch);
-        Quantity oneLiter = new Quantity(1, Unit.Liters);
-
-        assertThrows(IllegalArgumentException.class, () -> oneInch.add(oneLiter));
     }
 }
