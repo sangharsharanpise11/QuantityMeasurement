@@ -2,6 +2,7 @@ package com.thoughtworks.ComapreLength;
 
 import org.junit.jupiter.api.Test;
 
+import static com.thoughtworks.ComapreLength.Unit.Gallon;
 import static com.thoughtworks.ComapreLength.Unit.Liter;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -247,7 +248,7 @@ public class LengthTest {
         Quantity zeroFeet = new Quantity(0, Unit.Feet);
         Quantity zeroGallon = new Quantity(0, Unit.Gallon);
 
-        assertNotEquals(zeroFeet, zeroGallon);
+        assertFalse(zeroFeet.equals(zeroGallon));
     }
 
     @Test
@@ -272,5 +273,13 @@ public class LengthTest {
         Quantity zeroLiter = new Quantity(0, Liter);
 
         assertNotEquals(zeroInch, zeroLiter);
+    }
+
+    @Test
+    void givenZeroYardAndZeroGallon_whenCheckingEquality_thenTheyShouldBeNotEqual() {
+        Quantity zeroYard = new Quantity(0, Unit.Yard);
+        Quantity zeroGallon = new Quantity(0, Gallon);
+
+        assertNotEquals(zeroYard, zeroGallon);
     }
 }
