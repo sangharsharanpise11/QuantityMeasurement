@@ -8,14 +8,12 @@ public enum Unit {
     Liters(1);
 
     private double conversionFactor;
-    private double conversionToCM;
 
     Unit(final double conversionFactor) {
         this.conversionFactor = conversionFactor;
-
     }
 
-    double convertToBase(double value) {
+    public double convertToBase(double value) {
         return conversionFactor * value;
     }
 }

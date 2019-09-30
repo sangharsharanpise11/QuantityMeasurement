@@ -1,5 +1,6 @@
 package com.thoughtworks.ComapreLength;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -180,8 +181,16 @@ public class LengthTest {
     @Test
     void giventOneGallonAndThreePointSeventyEightLiters_whenEquals_thenTheyShouldBeEqual() {
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
-        Quantity threePointSeventyEightLiters = new Quantity(3.78, Unit.Liters);
+        Quantity threePointSevenEightLiters = new Quantity(3.78, Unit.Liters);
 
-        assertTrue(oneGallon.equals(threePointSeventyEightLiters));
+        assertEquals(oneGallon, threePointSevenEightLiters);
+    }
+
+    @Test
+    void givenOneFeetAndOneGallon_whenAdd_thenTheyShouldThrowAnException() {
+        Quantity oneFeet = new Quantity(1, Unit.Feet);
+        Quantity oneGallon = new Quantity(1, Unit.Gallon);
+
+        assertThrows(IllegalArgumentException.class, () -> oneFeet.add(oneGallon));
     }
 }

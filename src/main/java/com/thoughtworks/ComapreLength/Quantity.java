@@ -10,6 +10,7 @@ public class Quantity {
         this.unit = unit;
     }
 
+
     @Override
     public boolean equals(Object another) {
         if (this == another) {
@@ -23,6 +24,9 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
+        if (this.unit == Unit.Feet && other.unit == unit.Gallon) {
+            throw new IllegalArgumentException();
+        }
         return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.Inch);
     }
 }
