@@ -2,6 +2,7 @@ package com.thoughtworks.ComapreLength;
 
 import org.junit.jupiter.api.Test;
 
+import static com.thoughtworks.ComapreLength.Unit.Liter;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LengthTest {
@@ -180,7 +181,7 @@ public class LengthTest {
     @Test
     void givenOneGallonAndThreePointSeventyEightLiters_whenEquals_thenTheyShouldBeEqual() {
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
-        Quantity threePointSevenEightLiters = new Quantity(3.78, Unit.Liter);
+        Quantity threePointSevenEightLiters = new Quantity(3.78, Liter);
 
         assertEquals(oneGallon, threePointSevenEightLiters);
     }
@@ -196,15 +197,23 @@ public class LengthTest {
     @Test
     void givenOneInchAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity oneInch = new Quantity(1, Unit.Inch);
-        Quantity oneLiter = new Quantity(1, Unit.Liter);
+        Quantity oneLiter = new Quantity(1, Liter);
 
         assertNotEquals(oneInch, oneLiter);
     }
 
     @Test
+    void givenOneInchAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual2() {
+        Quantity oneInch = new Quantity(1, Unit.Inch);
+        Quantity oneLiter = new Quantity(1, Liter);
+
+        assertNotEquals(oneLiter, oneInch);
+    }
+
+    @Test
     void givenOneFeetAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity oneYard = new Quantity(1, Unit.Inch);
-        Quantity oneLiter = new Quantity(1, Unit.Liter);
+        Quantity oneLiter = new Quantity(1, Liter);
 
         assertNotEquals(oneYard, oneLiter);
     }
@@ -228,8 +237,24 @@ public class LengthTest {
     @Test
     void givenOneYardAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity oneYard = new Quantity(1, Unit.Yard);
-        Quantity oneLiter = new Quantity(1, Unit.Liter);
+        Quantity oneLiter = new Quantity(1, Liter);
 
         assertNotEquals(oneYard, oneLiter);
+    }
+
+    @Test
+    void givenZeroFeetAndZeroGallon_whenCheckingEquality_thenTheyShouldBeNotEqual() {
+        Quantity zeroFeet = new Quantity(0, Unit.Feet);
+        Quantity zeroGallon = new Quantity(0, Unit.Gallon);
+
+        assertNotEquals(zeroFeet, zeroGallon);
+    }
+
+    @Test
+    void givenZeroFeetAndZeroLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
+        Quantity zeroFeet = new Quantity(0, Unit.Feet);
+        Quantity zeroLiter = new Quantity(0, Liter);
+
+        assertNotEquals(zeroFeet, zeroLiter);
     }
 }
