@@ -257,4 +257,12 @@ public class LengthTest {
 
         assertNotEquals(zeroFeet, zeroLiter);
     }
+
+    @Test
+    void givenZeroInchAndZeroGallon_whenCheckingEquality_thenTheyShouldBeNotEqual() {
+        Quantity zeroInch = new Quantity(0, Unit.Inch);
+        Quantity zeroGallon = new Quantity(0, Unit.Gallon);
+
+        assertNotEquals(zeroInch, zeroGallon);
+    }
 }
