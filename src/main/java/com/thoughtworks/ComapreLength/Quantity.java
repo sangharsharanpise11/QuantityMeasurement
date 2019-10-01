@@ -20,15 +20,24 @@ public class Quantity {
 
         Quantity that = (Quantity) another;
 
-        if (!this.unit.type.equals(that.unit.type)) {
+        if (this.unit.baseUnit() != that.unit.baseUnit()) {
             return false;
         }
 
         return this.unit.convertToBase(value) == that.unit.convertToBase(that.value);
     }
 
+
     public Quantity add(Quantity other) {
-        if (this.unit.type != other.unit.type) throw new IllegalArgumentException();
-        return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.Inch);
+        if (this.unit.baseUnit() != other.unit.baseUnit()) throw new IllegalArgumentException();
+        return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), this.unit.baseUnit());
+    }
+
+    @Override
+    public String toString() {
+        return "Quantity{" +
+                "value=" + value +
+                ", unit=" + unit +
+                '}';
     }
 }

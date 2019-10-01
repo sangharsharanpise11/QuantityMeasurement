@@ -172,12 +172,12 @@ public class LengthTest {
         assertEquals(new Quantity(14, Unit.Inch), twoFeet.add(twoInch));
     }
 
-    @Disabled
+    @Test
     void givenOneGallonAndAnotherOneGallon_whenAdded_thenTheyShouldBeTwoGallon() {
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
         Quantity anotherOneGallon = new Quantity(1, Unit.Gallon);
 
-        assertEquals(new Quantity(2, Unit.Gallon), oneGallon.add(anotherOneGallon));
+        assertEquals(new Quantity(7.56, Liter), oneGallon.add(anotherOneGallon));
     }
 
     @Test
@@ -249,7 +249,7 @@ public class LengthTest {
         Quantity zeroFeet = new Quantity(0, Unit.Feet);
         Quantity zeroGallon = new Quantity(0, Unit.Gallon);
 
-        assertFalse(zeroFeet.equals(zeroGallon));
+        assertNotEquals(zeroFeet, zeroGallon);
     }
 
     @Test
