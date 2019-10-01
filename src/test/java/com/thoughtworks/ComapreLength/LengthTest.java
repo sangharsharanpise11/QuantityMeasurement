@@ -141,7 +141,7 @@ public class LengthTest {
     }
 
     @Test
-    void givenTwoInchAndTwoInch_whenEquals_thenTheyShouldBeFourInch() {
+    void givenTwoInchAndTwoInch_whenEquals_thenTheyShouldBeFourInch() throws InvalidArgumentUnitException {
         Quantity twoInch = new Quantity(2, Unit.Inch);
         Quantity anotherTwoInch = new Quantity(2, Unit.Inch);
 
@@ -149,7 +149,7 @@ public class LengthTest {
     }
 
     @Test
-    void givenOnefeetAndOneInch_whenAdded_thenTheyShouldBeThirteenInch() {
+    void givenOnefeetAndOneInch_whenAdded_thenTheyShouldBeThirteenInch() throws InvalidArgumentUnitException {
         Quantity oneFeet = new Quantity(1, Unit.Feet);
         Quantity oneInch = new Quantity(1, Unit.Inch);
 
@@ -157,7 +157,7 @@ public class LengthTest {
     }
 
     @Test
-    void givenOnefeetAndTwoInch_whenAdded_thenTheyShouldBeFourteenInches() {
+    void givenOnefeetAndTwoInch_whenAdded_thenTheyShouldBeFourteenInches() throws InvalidArgumentUnitException {
         Quantity oneFeet = new Quantity(1, Unit.Feet);
         Quantity twoInch = new Quantity(2, Unit.Inch);
 
@@ -165,7 +165,7 @@ public class LengthTest {
     }
 
     @Test
-    void giventwoFeetAndTwoFeet_whenAdded_thenTheyShouldBeTwentyFourInches() {
+    void giventwoFeetAndTwoFeet_whenAdded_thenTheyShouldBeTwentyFourInches() throws InvalidArgumentUnitException {
         Quantity twoFeet = new Quantity(1, Unit.Feet);
         Quantity twoInch = new Quantity(2, Unit.Inch);
 
@@ -173,7 +173,7 @@ public class LengthTest {
     }
 
     @Test
-    void givenOneGallonAndAnotherOneGallon_whenAdded_thenTheyShouldBeTwoGallon() {
+    void givenOneGallonAndAnotherOneGallon_whenAdded_thenTheyShouldBeTwoGallon() throws InvalidArgumentUnitException {
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
         Quantity anotherOneGallon = new Quantity(1, Unit.Gallon);
 
@@ -313,7 +313,7 @@ public class LengthTest {
         Quantity oneFeet = new Quantity(1, Unit.Feet);
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
 
-        assertThrows(IllegalArgumentException.class, () -> oneFeet.add(oneGallon));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneFeet.add(oneGallon));
     }
 
     @Test
@@ -321,7 +321,7 @@ public class LengthTest {
         Quantity oneInch = new Quantity(1, Unit.Inch);
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
 
-        assertThrows(IllegalArgumentException.class, () -> oneInch.add(oneGallon));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneInch.add(oneGallon));
     }
 
     @Test
@@ -329,7 +329,7 @@ public class LengthTest {
         Quantity oneyard = new Quantity(1, Unit.Yard);
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
 
-        assertThrows(IllegalArgumentException.class, () -> oneyard.add(oneGallon));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneyard.add(oneGallon));
     }
 
     @Test
@@ -337,7 +337,7 @@ public class LengthTest {
         Quantity oneCentimeter = new Quantity(1, Unit.Centimetre);
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
 
-        assertThrows(IllegalArgumentException.class, () -> oneCentimeter.add(oneGallon));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneCentimeter.add(oneGallon));
     }
 
     @Test
@@ -345,7 +345,7 @@ public class LengthTest {
         Quantity oneFeet = new Quantity(1, Unit.Feet);
         Quantity oneLiter = new Quantity(1, Liter);
 
-        assertThrows(IllegalArgumentException.class, () -> oneFeet.add(oneLiter));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneFeet.add(oneLiter));
     }
 
     @Test
@@ -353,7 +353,7 @@ public class LengthTest {
         Quantity oneInch = new Quantity(1, Unit.Inch);
         Quantity oneLiter = new Quantity(1, Liter);
 
-        assertThrows(IllegalArgumentException.class, () -> oneInch.add(oneLiter));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneInch.add(oneLiter));
     }
 
 
@@ -362,7 +362,7 @@ public class LengthTest {
         Quantity oneYard = new Quantity(1, Unit.Yard);
         Quantity oneLiter = new Quantity(1, Liter);
 
-        assertThrows(IllegalArgumentException.class, () -> oneYard.add(oneLiter));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneYard.add(oneLiter));
     }
 
     @Test
@@ -370,7 +370,7 @@ public class LengthTest {
         Quantity oneCentimetre = new Quantity(1, Unit.Centimetre);
         Quantity oneLiter = new Quantity(1, Liter);
 
-        assertThrows(IllegalArgumentException.class, () -> oneCentimetre.add(oneLiter));
+        assertThrows(InvalidArgumentUnitException.class, () -> oneCentimetre.add(oneLiter));
     }
 }
 
