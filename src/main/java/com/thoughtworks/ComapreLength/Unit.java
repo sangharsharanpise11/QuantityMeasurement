@@ -17,13 +17,14 @@ public enum Unit {
     }
 
     Unit(double conversionFactor) {
-        this.conversionFactor=conversionFactor;
-        this.unit=this;
+        this.conversionFactor = conversionFactor;
+        this.unit = this;
     }
 
-    public Unit baseUnit(){
+    public Unit baseUnit() {
         return unit;
     }
+
     public double convertToBase(double value) {
         return conversionFactor * value;
     }

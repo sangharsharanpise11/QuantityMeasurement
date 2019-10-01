@@ -27,7 +27,6 @@ public class Quantity {
         return this.unit.convertToBase(value) == that.unit.convertToBase(that.value);
     }
 
-
     public Quantity add(Quantity other) {
         if (this.unit.baseUnit() != other.unit.baseUnit()) throw new IllegalArgumentException();
         return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), this.unit.baseUnit());
