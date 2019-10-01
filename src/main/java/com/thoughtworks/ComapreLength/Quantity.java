@@ -28,6 +28,7 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
+        if (this.unit.type != other.unit.type) throw new IllegalArgumentException();
         return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.Inch);
     }
 }

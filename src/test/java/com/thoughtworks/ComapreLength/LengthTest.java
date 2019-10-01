@@ -303,8 +303,16 @@ public class LengthTest {
     @Test
     void givenZeroCMAndZeroGallon_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity zeroCM = new Quantity(0, Unit.Centimetre);
-        Quantity zeroGallon= new Quantity(0, Gallon);
+        Quantity zeroGallon = new Quantity(0, Unit.Gallon);
 
         assertNotEquals(zeroCM, zeroGallon);
+    }
+
+    @Test
+    void givenOneFeetAndOneGallon_whenAdding_thenTheyShouldThrowException() {
+        Quantity oneFeet = new Quantity(1, Unit.Feet);
+        Quantity oneGallon = new Quantity(1, Unit.Gallon);
+
+        assertThrows(IllegalArgumentException.class, () -> oneFeet.add(oneGallon));
     }
 }
