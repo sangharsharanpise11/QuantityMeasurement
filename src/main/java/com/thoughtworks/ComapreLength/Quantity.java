@@ -1,17 +1,12 @@
 package com.thoughtworks.ComapreLength;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Quantity {
-    private final double value;
-    private final Unit unit;
-
+    public final double value;
+    public final Unit unit;
 
     public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
-
     }
 
     @Override
@@ -25,8 +20,9 @@ public class Quantity {
 
         Quantity that = (Quantity) another;
 
-        if ((this.unit.getLengthUnits().contains(this.unit) && this.unit.getVolumeUnits().contains(that.unit))) return false;
-        if ((this.unit.getVolumeUnits().contains(this.unit) && this.unit.getLengthUnits().contains(that.unit))) return false;
+        if (!this.unit.type.equals(that.unit.type)) {
+            return false;
+        }
 
         return this.unit.convertToBase(value) == that.unit.convertToBase(that.value);
     }

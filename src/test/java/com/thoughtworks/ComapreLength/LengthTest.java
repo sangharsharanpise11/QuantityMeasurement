@@ -199,7 +199,7 @@ public class LengthTest {
     @Test
     void givenOneInchAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity oneInch = new Quantity(1, Unit.Inch);
-        Quantity oneLiter = new Quantity(1, Liter);
+        Quantity oneLiter = new Quantity(1, Unit.Liter);
 
         assertNotEquals(oneInch, oneLiter);
     }
@@ -207,7 +207,7 @@ public class LengthTest {
     @Test
     void givenOneInchAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual2() {
         Quantity oneInch = new Quantity(1, Unit.Inch);
-        Quantity oneLiter = new Quantity(1, Liter);
+        Quantity oneLiter = new Quantity(1, Unit.Liter);
 
         assertNotEquals(oneLiter, oneInch);
     }
@@ -215,7 +215,7 @@ public class LengthTest {
     @Test
     void givenOneFeetAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity oneYard = new Quantity(1, Unit.Inch);
-        Quantity oneLiter = new Quantity(1, Liter);
+        Quantity oneLiter = new Quantity(1, Unit.Liter);
 
         assertNotEquals(oneYard, oneLiter);
     }
@@ -239,7 +239,7 @@ public class LengthTest {
     @Test
     void givenOneYardAndOneLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity oneYard = new Quantity(1, Unit.Yard);
-        Quantity oneLiter = new Quantity(1, Liter);
+        Quantity oneLiter = new Quantity(1, Unit.Liter);
 
         assertNotEquals(oneYard, oneLiter);
     }
@@ -255,7 +255,7 @@ public class LengthTest {
     @Test
     void givenZeroFeetAndZeroLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity zeroFeet = new Quantity(0, Unit.Feet);
-        Quantity zeroLiter = new Quantity(0, Liter);
+        Quantity zeroLiter = new Quantity(0, Unit.Liter);
 
         assertNotEquals(zeroFeet, zeroLiter);
     }
@@ -279,7 +279,7 @@ public class LengthTest {
     @Test
     void givenZeroYardAndZeroGallon_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity zeroYard = new Quantity(0, Unit.Yard);
-        Quantity zeroGallon = new Quantity(0, Gallon);
+        Quantity zeroGallon = new Quantity(0, Unit.Gallon);
 
         assertNotEquals(zeroYard, zeroGallon);
     }
@@ -287,7 +287,7 @@ public class LengthTest {
     @Test
     void givenZeroYardAndZeroLiter_whenCheckingEquality_thenTheyShouldBeNotEqual() {
         Quantity zeroYard = new Quantity(0, Unit.Yard);
-        Quantity zeroLiter = new Quantity(0, Liter);
+        Quantity zeroLiter = new Quantity(0, Unit.Liter);
 
         assertNotEquals(zeroYard, zeroLiter);
     }

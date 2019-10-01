@@ -1,33 +1,22 @@
 package com.thoughtworks.ComapreLength;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public enum Unit {
-    Feet(12),
-    Inch(1),
-    Yard(36),
-    Liter(1),
-    Gallon(3.78);
+    Feet(12, UnitType.Length),
+    Inch(1, UnitType.Length),
+    Yard(36, UnitType.Length),
+    Liter(1, UnitType.Volume),
+    Gallon(3.78, UnitType.Volume);
 
-    public List<Unit> getVolumeUnits() {
-        List<Unit> volumeUnits = new ArrayList<>();
-        volumeUnits.add(Unit.Gallon);
-        volumeUnits.add(Unit.Liter);
-        return volumeUnits;
-    }
-    public List<Unit> getLengthUnits() {
-        List<Unit> lengthUnits = new ArrayList<>();
-        lengthUnits.add(Unit.Feet);
-        lengthUnits.add(Unit.Inch);
-        lengthUnits.add(Unit.Yard);
-        return lengthUnits;
+    enum UnitType {
+        Length, Volume;
     }
 
     private double conversionFactor;
+    public UnitType type;
 
-    Unit(final double conversionFactor) {
+    Unit(final double conversionFactor, UnitType type) {
         this.conversionFactor = conversionFactor;
+        this.type = type;
     }
 
     public double convertToBase(double value) {
