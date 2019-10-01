@@ -1,6 +1,7 @@
 package com.thoughtworks.ComapreLength;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Quantity {
     private final double value;
@@ -21,25 +22,16 @@ public class Quantity {
         if (!(another instanceof Quantity)) {
             return false;
         }
+
         Quantity that = (Quantity) another;
 
-        ArrayList<Unit> volumeUnits = new ArrayList<>();
-        volumeUnits.add(Unit.Gallon);
-        volumeUnits.add(Unit.Liter);
-
-        ArrayList<Unit> lengthUnits = new ArrayList<>();
-        lengthUnits.add(Unit.Feet);
-        lengthUnits.add(Unit.Inch);
-        lengthUnits.add(Unit.Yard);
-
-        if ((lengthUnits.contains(this.unit) && volumeUnits.contains(that.unit))) return false;
-        if ((volumeUnits.contains(this.unit) && lengthUnits.contains(that.unit))) return false;
+        if ((this.unit.getLengthUnits().contains(this.unit) && this.unit.getVolumeUnits().contains(that.unit))) return false;
+        if ((this.unit.getVolumeUnits().contains(this.unit) && this.unit.getLengthUnits().contains(that.unit))) return false;
 
         return this.unit.convertToBase(value) == that.unit.convertToBase(that.value);
     }
 
     public Quantity add(Quantity other) {
         return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.Inch);
-
     }
 }
