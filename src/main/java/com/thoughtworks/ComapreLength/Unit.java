@@ -4,6 +4,7 @@ public enum Unit {
     Feet(12, UnitType.Length),
     Inch(1, UnitType.Length),
     Yard(36, UnitType.Length),
+    Centimetre(1, UnitType.Length),
     Liter(1, UnitType.Volume),
     Gallon(3.78, UnitType.Volume);
 
