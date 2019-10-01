@@ -1,9 +1,7 @@
 package com.thoughtworks.ComapreLength;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static com.thoughtworks.ComapreLength.Unit.Gallon;
 import static com.thoughtworks.ComapreLength.Unit.Liter;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,14 +11,14 @@ public class LengthTest {
         Quantity zeroFeetOne = new Quantity(0, Unit.Feet);
         Quantity zeroFeetTwo = new Quantity(0, Unit.Feet);
 
-        assertTrue(zeroFeetOne.equals(zeroFeetTwo));
+        assertEquals(zeroFeetOne, zeroFeetTwo);
     }
 
     @Test
     void givenZeroFeetAndAnotherObject_whenCompare_thenTheyShouldNotBeEqual() {
         Quantity zeroFeetOne = new Quantity(0, Unit.Feet);
 
-        assertFalse(zeroFeetOne.equals(new Object()));
+        assertNotEquals(zeroFeetOne, new Object());
     }
 
     @Test
@@ -28,14 +26,14 @@ public class LengthTest {
         Quantity zeroFeet = new Quantity(0, Unit.Feet);
         Quantity oneFeet = new Quantity(1, Unit.Feet);
 
-        assertFalse(zeroFeet.equals(oneFeet));
+        assertNotEquals(zeroFeet, oneFeet);
     }
 
     @Test
     void givenZeroFeetAndNullFeet_whenCompare_thenTheyShouldNotBeEqual() {
         Quantity zeroFeet = new Quantity(0, Unit.Feet);
 
-        assertFalse(zeroFeet.equals(null));
+        assertNotEquals(null, zeroFeet);
     }
 
     @Test
@@ -43,14 +41,14 @@ public class LengthTest {
         Quantity zeroInchOne = new Quantity(0, Unit.Inch);
         Quantity zeroInchTwo = new Quantity(0, Unit.Inch);
 
-        assertTrue(zeroInchOne.equals(zeroInchTwo));
+        assertEquals(zeroInchOne, zeroInchTwo);
     }
 
     @Test
     void givenZeroInchAndAnotherObject_whenCompare_thenTheyShouldNotBeEqual() {
         Quantity zeroInchOne = new Quantity(0, Unit.Inch);
 
-        assertFalse(zeroInchOne.equals(new Object()));
+        assertNotEquals(zeroInchOne, new Object());
     }
 
     @Test
@@ -58,14 +56,14 @@ public class LengthTest {
         Quantity zeroInch = new Quantity(0, Unit.Inch);
         Quantity oneInch = new Quantity(1, Unit.Inch);
 
-        assertFalse(zeroInch.equals(oneInch));
+        assertNotEquals(zeroInch, oneInch);
     }
 
     @Test
     void givenZeroInchAndNullFeet_whenCompare_thenTheyShouldNotBeEqual() {
         Quantity zeroInch = new Quantity(0, Unit.Inch);
 
-        assertFalse(zeroInch.equals(null));
+        assertNotEquals(null, zeroInch);
     }
 
     @Test
@@ -73,7 +71,7 @@ public class LengthTest {
         Quantity oneInch = new Quantity(1, Unit.Inch);
         Quantity oneFeet = new Quantity(1, Unit.Feet);
 
-        assertFalse(oneFeet.equals(oneInch));
+        assertNotEquals(oneFeet, oneInch);
     }
 
     @Test
@@ -81,7 +79,7 @@ public class LengthTest {
         Quantity zeroInch = new Quantity(0, Unit.Inch);
         Quantity zeroFeet = new Quantity(0, Unit.Feet);
 
-        assertTrue(zeroFeet.equals(zeroInch));
+        assertEquals(zeroFeet, zeroInch);
     }
 
     @Test
@@ -89,7 +87,7 @@ public class LengthTest {
         Quantity oneFeet = new Quantity(1, Unit.Feet);
         Quantity twelveInch = new Quantity(12, Unit.Inch);
 
-        assertTrue(oneFeet.equals(twelveInch));
+        assertEquals(oneFeet, twelveInch);
     }
 
     @Test
@@ -97,7 +95,7 @@ public class LengthTest {
         Quantity twoFeet = new Quantity(2, Unit.Feet);
         Quantity twentyFourInch = new Quantity(24, Unit.Inch);
 
-        assertTrue(twoFeet.equals(twentyFourInch));
+        assertEquals(twoFeet, twentyFourInch);
     }
 
     @Test
@@ -105,7 +103,7 @@ public class LengthTest {
         Quantity twelveInch = new Quantity(12, Unit.Inch);
         Quantity oneFeet = new Quantity(1, Unit.Feet);
 
-        assertTrue(twelveInch.equals(oneFeet));
+        assertEquals(twelveInch, oneFeet);
     }
 
     @Test
@@ -113,7 +111,7 @@ public class LengthTest {
         Quantity twentyFourInche = new Quantity(24, Unit.Inch);
         Quantity twoFeet = new Quantity(2, Unit.Feet);
 
-        assertTrue(twentyFourInche.equals(twoFeet));
+        assertEquals(twentyFourInche, twoFeet);
     }
 
     @Test
@@ -121,7 +119,7 @@ public class LengthTest {
         Quantity oneYard = new Quantity(1, Unit.Yard);
         Quantity anotherOneYard = new Quantity(1, Unit.Yard);
 
-        assertTrue(oneYard.equals(anotherOneYard));
+        assertEquals(oneYard, anotherOneYard);
     }
 
     @Test
@@ -129,7 +127,7 @@ public class LengthTest {
         Quantity oneYard = new Quantity(1, Unit.Yard);
         Quantity zeroYard = new Quantity(0, Unit.Yard);
 
-        assertFalse(oneYard.equals(zeroYard));
+        assertNotEquals(oneYard, zeroYard);
     }
 
     @Test
@@ -137,7 +135,7 @@ public class LengthTest {
         Quantity oneYard = new Quantity(1, Unit.Yard);
         Quantity oneFeet = new Quantity(1, Unit.Feet);
 
-        assertFalse(oneYard.equals(oneFeet));
+        assertNotEquals(oneYard, oneFeet);
     }
 
     @Test
@@ -373,5 +371,3 @@ public class LengthTest {
         assertThrows(InvalidArgumentUnitException.class, () -> oneCentimetre.add(oneLiter));
     }
 }
-
-

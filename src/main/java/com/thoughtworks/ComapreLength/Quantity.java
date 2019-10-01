@@ -20,16 +20,14 @@ public class Quantity {
 
         Quantity that = (Quantity) another;
 
-        if (this.unit.baseUnit() != that.unit.baseUnit()) {
-            return false;
-        }
+        if (this.unit.baseUnit() != that.unit.baseUnit()) return false;
 
         return this.unit.convertToBase(value) == that.unit.convertToBase(that.value);
     }
 
     public Quantity add(Quantity other) throws InvalidArgumentUnitException {
         if (this.unit.baseUnit() != other.unit.baseUnit()) {
-            throw new InvalidArgumentUnitException(" <Arguments are not added because Unit Types are Different < " + this.unit.baseUnit() + " and " + other.unit.baseUnit() + " >>");
+            throw new InvalidArgumentUnitException(" <Arguments are not added because Unit Types are Different < " + this.unit.baseUnit() + "         and " + other.unit.baseUnit() + " >>");
         }
 
         return new Quantity(this.unit.convertToBase(this.value) + other.unit.convertToBase(other.value), this.unit.baseUnit());
