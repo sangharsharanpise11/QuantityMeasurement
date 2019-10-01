@@ -323,4 +323,11 @@ public class LengthTest {
 
         assertThrows(IllegalArgumentException.class, () -> oneInch.add(oneGallon));
     }
+    @Test
+    void givenOneYardAndOneGallon_whenAdding_thenTheyShouldThrowException() {
+        Quantity oneyard = new Quantity(1, Unit.Feet);
+        Quantity oneGallon = new Quantity(1, Unit.Gallon);
+
+        assertThrows(IllegalArgumentException.class, () -> oneyard.add(oneGallon));
+    }
 }
