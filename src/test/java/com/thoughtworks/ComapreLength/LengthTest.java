@@ -325,14 +325,14 @@ public class LengthTest {
     }
     @Test
     void givenOneYardAndOneGallon_whenAdding_thenTheyShouldThrowException() {
-        Quantity oneyard = new Quantity(1, Unit.Feet);
+        Quantity oneyard = new Quantity(1, Unit.Yard);
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
 
         assertThrows(IllegalArgumentException.class, () -> oneyard.add(oneGallon));
     }
     @Test
     void givenOneCentimeterAndOneGallon_whenAdding_thenTheyShouldThrowException() {
-        Quantity oneCentimeter = new Quantity(1, Unit.Feet);
+        Quantity oneCentimeter = new Quantity(1, Unit.Centimetre);
         Quantity oneGallon = new Quantity(1, Unit.Gallon);
 
         assertThrows(IllegalArgumentException.class, () -> oneCentimeter.add(oneGallon));
@@ -341,8 +341,10 @@ public class LengthTest {
     @Test
     void givenOneFeetAndOneLiter_whenAdding_thenTheyShouldThrowException() {
         Quantity oneFeet = new Quantity(1, Unit.Feet);
-        Quantity oneLiter = new Quantity(1, Unit.Gallon);
+        Quantity oneLiter = new Quantity(1, Liter);
 
         assertThrows(IllegalArgumentException.class, () -> oneFeet.add(oneLiter));
     }
+
 }
+
