@@ -299,4 +299,12 @@ public class LengthTest {
 
         assertNotEquals(zeroCM, zeroLiter);
     }
+
+    @Test
+    void givenZeroCMAndZeroGallon_whenCheckingEquality_thenTheyShouldBeNotEqual() {
+        Quantity zeroCM = new Quantity(0, Unit.Centimetre);
+        Quantity zeroGallon= new Quantity(0, Gallon);
+
+        assertNotEquals(zeroCM, zeroGallon);
+    }
 }
